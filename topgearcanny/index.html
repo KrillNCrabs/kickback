@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<style>
+#apple{
+line-height:0.25vw
+}
+body{
+margin: 0;
+padding:0;
+background-color:rgb(255, 255, 255)
+}
+pre{
+margin: 0;
+padding:0;
+font-size:0.4625vw;
+font-family:monospace;
+color: rgb(0,0,0);
+}
+</style>
+<body id="bdy">
+<div id="cont">
+<pre id="apple"></pre>
+</div>
+<button onclick="startin()" id="bttn">Start</button>
+<script src="AppleArrays/AppleArray0.js"></script>
+<script src="AppleArrays/AppleArray1.js"></script>
+<script src="AppleArrays/AppleArray2.js"></script>
+<script src="AppleArrays/AppleArray3.js"></script>
+<script src="AppleArrays/AppleArray4.js"></script>
+<script src="AppleArrays/AppleArray5.js"></script>
+<script src="AppleArrays/AppleArray6.js"></script>
+<script src="AppleArrays/AppleArray7.js"></script>
+<script src="AppleArrays/AppleArray8.js"></script>
+<script src="AppleArrays/AppleArray9.js"></script>
+<script src="AppleArrays/AppleArray10.js"></script>
+<script src="AppleArrays/AppleArray11.js"></script>
+<script src="AppleArrays/AppleArray12.js"></script>
+<script src="AppleArrays/AppleArray13.js"></script>
+<script src="AppleArrays/AppleArray14.js"></script>
+<script src="AppleArrays/AppleArray15.js"></script>
+<script src="AppleArrays/AppleArray16.js"></script>
+<script src="AppleArrays/AppleArray17.js"></script>
+<script src="AppleArrays/AppleArray18.js"></script>
+<script src="AppleArrays/AppleArray19.js"></script>
+<script src="AppleArrays/AppleArray20.js"></script>
+<script>
+appleArray = appleArray0.concat(appleArray1).concat(appleArray2).concat(appleArray3).concat(appleArray4).concat(appleArray5).concat(appleArray6).concat(appleArray7).concat(appleArray8).concat(appleArray9).concat(appleArray10).concat(appleArray11).concat(appleArray12).concat(appleArray13).concat(appleArray14).concat(appleArray15).concat(appleArray16).concat(appleArray17).concat(appleArray18).concat(appleArray19).concat(appleArray20)
+var started ="False"
+var i = 0
+var frameRate = 30
+var lent = 1000/frameRate
+function startin(){
+if(started=="False"){
+i = 0
+document.getElementById("bttn").style.display = "none"
+var audio = new Audio('../TopGear.mp3');
+audio.play();
+interval = setInterval(badAppling,lent)
+started="True"
+}
+}
+i = 0
+function badAppling(){
+document.getElementById("apple").innerHTML = appleArray[i]
+i++
+if(i>appleArray.length+5){
+started = "False"
+clearInterval(interval)
+document.getElementById("bttn").style.display = ""
+}
+}
+function updateSizes(){
+let mult = 0.5
+document.getElementById("cont").style.width = 40.65*mult + "vw"
+document.getElementById("cont").style.height = 30*mult + "vw"
+document.getElementById("apple").style.lineHeight = 0.3*mult + "vw"
+document.getElementById("apple").style.fontSize = 0.5*mult + "vw"
+}
+updateSizes()
+</script>
+</body>
+</html>
